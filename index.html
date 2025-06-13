@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jira-Like Task Board</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header>
+      <h1>🛠️ Mini Jira Task Board</h1>
+    </header>
+    <section class="task-creator">
+      <input type="text" id="taskInput" placeholder="Enter new task..." />
+      <button onclick="addTask()">Add Task</button>
+    </section>
+    <main class="board">
+      <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>To Do</h2>
+      </div>
+      <div class="column" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>In Progress</h2>
+      </div>
+      <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>Done</h2>
+      </div>
+    </main>
+    <section class="history-section">
+      <h2>📜 Task History</h2>
+      <button class="clear-history-btn" onclick="clearHistory()">🧹 Clear History</button>
+      <ul id="taskHistory"></ul>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
